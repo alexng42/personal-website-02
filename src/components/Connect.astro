@@ -1,0 +1,281 @@
+---
+// Replace with your Cal.com username/event, e.g. "jaspershan/chat"
+const calLink = 'jasper-a9c350/30min';
+---
+
+<section id="connect" class="py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="section-title animate">Let's Connect</h2>
+
+    <div class="animate stagger-1 grid gap-4 sm:grid-cols-2">
+      <!-- Email card -->
+      <a
+        href="mailto:jaspershan@gmail.com"
+        class="group block rounded-2xl border border-stone-200/60 dark:border-stone-800/60 bg-white dark:bg-stone-900/60 p-5 card-hover"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-stone-100 dark:bg-stone-800 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40 transition-colors duration-300">
+            <svg class="w-5 h-5 text-stone-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-stone-900 dark:text-stone-50">Email</h3>
+            <p class="text-xs text-stone-400 dark:text-stone-500">Reach out anytime</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-stone-600 dark:text-stone-300 font-mono">jaspershan@gmail.com</span>
+          <svg class="w-4 h-4 text-stone-300 dark:text-stone-600 group-hover:text-stone-500 dark:group-hover:text-stone-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- Schedule a call card (Cal.com) -->
+      <button
+        id="cal-trigger"
+        data-cal-link={calLink}
+        data-cal-config='{"layout":"month_view"}'
+        class="group block w-full text-left rounded-2xl border border-stone-200/60 dark:border-stone-800/60 bg-white dark:bg-stone-900/60 p-5 card-hover cursor-pointer"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-stone-100 dark:bg-stone-800 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/40 transition-colors duration-300">
+            <svg class="w-5 h-5 text-stone-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-stone-900 dark:text-stone-50">Schedule a call</h3>
+            <p class="text-xs text-stone-400 dark:text-stone-500">Book a time that works</p>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <!-- Availability indicator -->
+            <div id="availability-badge" class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-stone-100 dark:bg-stone-800 text-xs font-medium text-stone-500 dark:text-stone-400 cursor-help" title="Estimated based on open calendar slots over the next 10 business days.">
+              <span class="relative flex h-1.5 w-1.5">
+                <span id="availability-ping" class="absolute inline-flex h-full w-full rounded-full opacity-75 animate-ping bg-stone-400"></span>
+                <span id="availability-dot" class="relative inline-flex rounded-full h-1.5 w-1.5 bg-stone-400"></span>
+              </span>
+              <span id="availability-text">Loading...</span>
+            </div>
+            <!-- Local time -->
+            <span class="text-xs text-stone-400 dark:text-stone-500 font-mono" id="local-time"></span>
+          </div>
+          <svg class="w-4 h-4 text-stone-300 dark:text-stone-600 group-hover:text-stone-500 dark:group-hover:text-stone-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Cal.com embed
+  (function (C: any, A: string, L: string) {
+    let p = function (a: any, ar: any) {
+      a.q.push(ar);
+    };
+    let d = C.document;
+    C.Cal =
+      C.Cal ||
+      function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement('script')).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () {
+            p(api, arguments);
+          };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === 'string') {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ['initNamespace', namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+  })(window, 'https://app.cal.com/embed/embed.js', 'init');
+
+  (window as any).Cal('init', 'meet', { origin: 'https://cal.com' });
+  (window as any).Cal.ns.meet('ui', {
+    theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+    hideEventTypeDetails: false,
+    layout: 'month_view',
+  });
+
+  // Update Cal.com theme when dark mode toggles
+  const observer = new MutationObserver(() => {
+    if ((window as any).Cal?.ns?.meet) {
+      (window as any).Cal.ns.meet('ui', {
+        theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+      });
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  // Local time display (Pacific Time)
+  const timeEl = document.getElementById('local-time')!;
+  const updateTime = () => {
+    const now = new Date();
+    const fmt = new Intl.DateTimeFormat('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false,
+      timeZone: 'America/Los_Angeles',
+    });
+    timeEl.textContent = fmt.format(now) + ' PT';
+  };
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // Availability: pull slots from Cal.com, update badge, re-poll every 5 min
+  const calLinkAttr = document.getElementById('cal-trigger')?.getAttribute('data-cal-link');
+
+  type AvailLevel = 'open' | 'filling' | 'busy' | 'full' | 'error';
+
+  const levelConfig: Record<AvailLevel, {
+    label: string;
+    dotColor: string;
+    pingColor: string;
+    badgeBg: string;
+    badgeText: string;
+    showPing: boolean;
+  }> = {
+    open: {
+      label: 'Open',
+      dotColor: 'bg-emerald-500',
+      pingColor: 'bg-emerald-400',
+      badgeBg: 'bg-emerald-50 dark:bg-emerald-950/50',
+      badgeText: 'text-emerald-700 dark:text-emerald-400',
+      showPing: true,
+    },
+    filling: {
+      label: 'Filling up',
+      dotColor: 'bg-amber-500',
+      pingColor: 'bg-amber-400',
+      badgeBg: 'bg-amber-50 dark:bg-amber-950/50',
+      badgeText: 'text-amber-700 dark:text-amber-400',
+      showPing: true,
+    },
+    busy: {
+      label: 'Busy',
+      dotColor: 'bg-orange-500',
+      pingColor: 'bg-orange-400',
+      badgeBg: 'bg-orange-50 dark:bg-orange-950/50',
+      badgeText: 'text-orange-700 dark:text-orange-400',
+      showPing: false,
+    },
+    full: {
+      label: 'Fully booked',
+      dotColor: 'bg-red-500',
+      pingColor: 'bg-red-400',
+      badgeBg: 'bg-red-50 dark:bg-red-950/50',
+      badgeText: 'text-red-700 dark:text-red-400',
+      showPing: false,
+    },
+    error: {
+      label: 'Check availability',
+      dotColor: 'bg-stone-400',
+      pingColor: 'bg-stone-400',
+      badgeBg: 'bg-stone-100 dark:bg-stone-800',
+      badgeText: 'text-stone-500 dark:text-stone-400',
+      showPing: false,
+    },
+  };
+
+  function applyLevel(level: AvailLevel) {
+    const badge = document.getElementById('availability-badge')!;
+    const text = document.getElementById('availability-text')!;
+    const dot = document.getElementById('availability-dot')!;
+    const ping = document.getElementById('availability-ping')!;
+    const cfg = levelConfig[level];
+
+    text.textContent = cfg.label;
+
+    // Reset classes
+    const resetClasses = (el: Element, prefix: string) => {
+      [...el.classList].filter(c => c.startsWith(prefix)).forEach(c => el.classList.remove(c));
+    };
+    resetClasses(dot, 'bg-');
+    resetClasses(ping, 'bg-');
+    // Remove all color variants from badge
+    badge.className = badge.className
+      .split(' ')
+      .filter(c => !c.startsWith('bg-') && !c.startsWith('text-') && !c.startsWith('dark:bg-') && !c.startsWith('dark:text-'))
+      .join(' ');
+
+    dot.classList.add(cfg.dotColor);
+    ping.classList.add(cfg.pingColor);
+    cfg.badgeBg.split(' ').forEach(c => badge.classList.add(c));
+    cfg.badgeText.split(' ').forEach(c => badge.classList.add(c));
+
+    if (cfg.showPing) {
+      ping.classList.remove('hidden');
+    } else {
+      ping.classList.add('hidden');
+    }
+  }
+
+  async function fetchAvailability() {
+    if (!calLinkAttr) return;
+    const [username, eventSlug] = calLinkAttr.split('/');
+
+    // Next 14 calendar days ≈ 10 business days
+    const today = new Date();
+    const endDate = new Date(today);
+    endDate.setDate(endDate.getDate() + 14);
+
+    try {
+      const startISO = today.toISOString();
+      const endISO = endDate.toISOString();
+      const slug = eventSlug || '30min';
+      const res = await fetch(
+        `https://cal.com/api/v2/slots/available?startTime=${encodeURIComponent(startISO)}&endTime=${encodeURIComponent(endISO)}&eventTypeSlug=${slug}&usernameList[]=${username}`
+      );
+      const data = await res.json();
+      const slots = data?.data?.slots || {};
+
+      // Count days with slots and total slots
+      const daysWithSlots = Object.values(slots).filter(
+        (day: any) => Array.isArray(day) && day.length > 0
+      ).length;
+      const totalSlots = Object.values(slots).reduce(
+        (sum: number, day: any) => sum + (Array.isArray(day) ? day.length : 0),
+        0
+      );
+
+      // 10 business days, assume ~8 slots per day = ~80 max
+      const ratio = totalSlots / 80;
+
+      let level: AvailLevel;
+      if (totalSlots === 0 || daysWithSlots === 0) {
+        level = 'full';
+      } else if (ratio < 0.15) {
+        level = 'busy';
+      } else if (ratio < 0.5) {
+        level = 'filling';
+      } else {
+        level = 'open';
+      }
+
+      applyLevel(level);
+    } catch {
+      applyLevel('error');
+    }
+  }
+
+  // Initial fetch + re-poll every 5 minutes
+  fetchAvailability();
+  setInterval(fetchAvailability, 5 * 60 * 1000);
+</script>

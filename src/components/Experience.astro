@@ -1,0 +1,203 @@
+---
+const experiences = [
+  {
+    company: 'Meta',
+    logoBg: 'bg-[#0668E1]',
+    logoSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"><path fill-rule="evenodd" d="M8.217 5.243C9.145 3.988 10.171 3 11.483 3 13.96 3 16 6.153 16.001 9.907c0 2.29-.986 3.725-2.757 3.725-1.543 0-2.395-.866-3.924-3.424l-.667-1.123-.118-.197a55 55 0 0 0-.53-.877l-1.178 2.08c-1.673 2.925-2.615 3.541-3.923 3.541C1.086 13.632 0 12.217 0 9.973 0 6.388 1.995 3 4.598 3q.477-.001.924.122c.31.086.611.22.913.407.577.359 1.154.915 1.782 1.714m1.516 2.224q-.378-.615-.727-1.133L9 6.326c.845-1.305 1.543-1.954 2.372-1.954 1.723 0 3.102 2.537 3.102 5.653 0 1.188-.39 1.877-1.195 1.877-.773 0-1.142-.51-2.61-2.87zM4.846 4.756c.725.1 1.385.634 2.34 2.001A212 212 0 0 0 5.551 9.3c-1.357 2.126-1.826 2.603-2.581 2.603-.777 0-1.24-.682-1.24-1.9 0-2.602 1.298-5.264 2.846-5.264q.137 0 .27.018"/></svg>',
+    roles: [
+      {
+        title: 'Senior Software Engineer',
+        team: 'Training Optimizations, TorchRec',
+        period: 'Jul 2023 - Present',
+        location: 'Menlo Park, CA',
+        type: 'Full-time',
+        highlight: true,
+        bullets: [
+          'Led the Training Optimizations team to land training optimization techniques — including embedding pruning, embedding offloading, and model freshness — saving Meta upwards of $500M per year in compute costs.',
+          'Drove embedding pruning techniques that reduce embedding table sizes by up to 50%, significantly lowering serving and training capacity requirements, saving up to 2 MW of power.',
+          'Drove adoption of embedding offloading across Meta\'s leading recommendation models, enabling frontier-scale training at 100TB by leveraging GPU memory optimization with host memory and SSD tiers.',
+          'Reduced model staleness from ~30 minutes to ~5 minutes for Ads and Recommendation Models.',
+          'All techniques contributed upstream to the open-source TorchRec and FBGEMM libraries on PyTorch.',
+        ],
+        skills: ['Python', 'C++', 'CUDA', 'PyTorch', 'TorchRec', 'FBGEMM'],
+      },
+      {
+        title: 'Software Engineer',
+        team: 'Messenger & Instagram Direct',
+        period: 'Feb 2021 - Jul 2023',
+        location: 'Menlo Park, CA',
+        type: 'Full-time',
+        bullets: [
+          'Drove the migration of the entire messaging stack from Django (Python) to WWW (Hack).',
+          'Led efficiency initiatives around message rendering resulting in ~1 MW of power savings.',
+          'Built developer tooling that achieved 90% reduction in engineering hours for common workflows.',
+        ],
+        skills: ['Python', 'Hack', 'Django', 'React'],
+      },
+      {
+        title: 'Software Engineer',
+        team: 'Privacy Infrastructure',
+        period: 'Jan 2019 - Feb 2021',
+        location: 'Menlo Park, CA',
+        type: 'Full-time',
+        bullets: [
+          'Led a company-wide data classification system enforcing safety guardrails at infrastructure scale.',
+          'Built a real-time streaming classification system handling all of Meta\'s inbound and outbound traffic.',
+          'Trained custom ML models to classify free-form user data across billions of records.',
+        ],
+        skills: ['Python', 'ML', 'Streaming', 'Data Infra'],
+      },
+    ],
+  },
+  {
+    company: 'Facebook',
+    logoBg: 'bg-[#1877F2]',
+    logoSvg: '<svg viewBox="0 0 36 36" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20.18 21.75h4.38l.69-4.5h-5.07V14.7c0-1.23.6-2.43 2.54-2.43h1.96V8.28s-1.78-.3-3.48-.3c-3.55 0-5.87 2.15-5.87 6.04v3.23H10.8v4.5h4.53V33.6a18.1 18.1 0 005.58 0V21.75z"/></svg>',
+    roles: [
+      {
+        title: 'SWE Intern',
+        team: 'Instagram Privacy & Security',
+        period: 'Jan 2018 - Apr 2018',
+        location: 'Menlo Park, CA',
+        type: 'Internship',
+        bullets: [
+          'Built an Audience Control framework for specifying custom audiences across Instagram interactions and content types.',
+        ],
+        skills: ['Python', 'iOS', 'Privacy'],
+      },
+    ],
+  },
+  {
+    company: 'Amazon',
+    logoBg: 'bg-[#232F3E]',
+    logoSvg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white"><path d="M10.813 11.968c.157.083.36.074.5-.05l.005.005a90 90 0 0 1 1.623-1.405c.173-.143.143-.372.006-.563l-.125-.17c-.345-.465-.673-.906-.673-1.791v-3.3l.001-.335c.008-1.265.014-2.421-.933-3.305C10.404.274 9.06 0 8.03 0 6.017 0 3.77.75 3.296 3.24c-.047.264.143.404.316.443l2.054.22c.19-.009.33-.196.366-.387.176-.857.896-1.271 1.703-1.271.435 0 .929.16 1.188.55.264.39.26.91.257 1.376v.432q-.3.033-.621.065c-1.113.114-2.397.246-3.36.67C3.873 5.91 2.94 7.08 2.94 8.798c0 2.2 1.387 3.298 3.168 3.298 1.506 0 2.328-.354 3.489-1.54l.167.246c.274.405.456.675 1.047 1.166ZM6.03 8.431C6.03 6.627 7.647 6.3 9.177 6.3v.57c.001.776.002 1.434-.396 2.133-.336.595-.87.961-1.465.961-.812 0-1.286-.619-1.286-1.533M.435 12.174c2.629 1.603 6.698 4.084 13.183.997.28-.116.475.078.199.431C13.538 13.96 11.312 16 7.57 16 3.832 16 .968 13.446.094 12.386c-.24-.275.036-.4.199-.299z"/><path d="M13.828 11.943c.567-.07 1.468-.027 1.645.204.135.176-.004.966-.233 1.533-.23.563-.572.961-.762 1.115s-.333.094-.23-.137c.105-.23.684-1.663.455-1.963-.213-.278-1.177-.177-1.625-.13l-.09.009q-.142.013-.233.024c-.193.021-.245.027-.274-.032-.074-.209.779-.556 1.347-.623"/></svg>',
+    roles: [
+      {
+        title: 'SWE Intern',
+        team: 'AWS Lambda',
+        period: 'May 2017 - Dec 2017',
+        location: 'Seattle, WA',
+        type: 'Internship',
+        bullets: [
+          'Implemented Optimistic Concurrency Control for AWS Lambda API, guaranteeing consistency of function update transactions.',
+        ],
+        skills: ['Java', 'AWS', 'Distributed Systems'],
+      },
+    ],
+  },
+];
+
+const skillColors: Record<string, string> = {
+  'Python': 'bg-blue-100/80 text-blue-700 dark:bg-blue-500/10 dark:text-blue-300 border-blue-200/50 dark:border-blue-500/20',
+  'C++': 'bg-purple-100/80 text-purple-700 dark:bg-purple-500/10 dark:text-purple-300 border-purple-200/50 dark:border-purple-500/20',
+  'CUDA': 'bg-green-100/80 text-green-700 dark:bg-green-500/10 dark:text-green-300 border-green-200/50 dark:border-green-500/20',
+  'PyTorch': 'bg-red-100/80 text-red-700 dark:bg-red-500/10 dark:text-red-300 border-red-200/50 dark:border-red-500/20',
+  'TorchRec': 'bg-orange-100/80 text-orange-700 dark:bg-orange-500/10 dark:text-orange-300 border-orange-200/50 dark:border-orange-500/20',
+  'FBGEMM': 'bg-amber-100/80 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300 border-amber-200/50 dark:border-amber-500/20',
+  'Java': 'bg-red-100/80 text-red-700 dark:bg-red-500/10 dark:text-red-300 border-red-200/50 dark:border-red-500/20',
+  'AWS': 'bg-yellow-100/80 text-yellow-700 dark:bg-yellow-500/10 dark:text-yellow-300 border-yellow-200/50 dark:border-yellow-500/20',
+  'React': 'bg-cyan-100/80 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-300 border-cyan-200/50 dark:border-cyan-500/20',
+  'ML': 'bg-violet-100/80 text-violet-700 dark:bg-violet-500/10 dark:text-violet-300 border-violet-200/50 dark:border-violet-500/20',
+};
+
+function getSkillClass(skill: string): string {
+  return skillColors[skill] || 'bg-stone-100/80 text-stone-600 dark:bg-stone-500/10 dark:text-stone-300 border-stone-200/50 dark:border-stone-500/20';
+}
+---
+
+<section id="experience" class="py-6 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="section-title animate">Experience</h2>
+
+    <div class="relative">
+      {/* Main timeline line */}
+      <div class="absolute left-[23px] top-0 bottom-0 w-px bg-gradient-to-b from-stone-200 via-stone-200 to-transparent dark:from-stone-800 dark:via-stone-800 hidden sm:block"></div>
+
+      <div class="space-y-6">
+        {experiences.map((exp, expIdx) => (
+          <div class={`animate stagger-${Math.min(expIdx + 1, 3)}`}>
+            {exp.roles.map((role, roleIdx) => (
+              <div class:list={[roleIdx > 0 ? 'mt-4' : '']}>
+                <div class="group relative flex gap-5">
+                  {/* Timeline node */}
+                  <div class="hidden sm:flex flex-shrink-0 flex-col items-center">
+                    {roleIdx === 0 ? (
+                      <div class={`relative z-10 w-[42px] h-[42px] rounded-xl ${exp.logoBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 p-2`}>
+                        <Fragment set:html={exp.logoSvg} />
+                      </div>
+                    ) : (
+                      <div class="relative z-10 w-3 h-3 rounded-full bg-stone-300 dark:bg-stone-600 mt-2 group-hover:bg-indigo-400 dark:group-hover:bg-indigo-500 transition-colors duration-300" />
+                    )}
+                  </div>
+
+                  {/* Content card */}
+                  <div class:list={[
+                    'flex-1 min-w-0 rounded-2xl border p-5 card-hover',
+                    role.highlight
+                      ? 'bg-gradient-to-br from-white to-indigo-50/50 dark:from-stone-900 dark:to-indigo-950/30 border-indigo-100/50 dark:border-indigo-900/30'
+                      : 'bg-white dark:bg-stone-900/80 border-stone-200/50 dark:border-stone-800/50',
+                  ]}>
+                    {role.highlight && (
+                      <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 mb-3">
+                        <span class="w-1 h-1 rounded-full bg-indigo-500 animate-pulse"></span>
+                        Current Role
+                      </div>
+                    )}
+
+                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                      <div>
+                        <h3 class="text-base font-bold text-stone-900 dark:text-stone-50 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                          {role.title}
+                        </h3>
+                        <p class="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
+                          <span class="font-medium text-stone-700 dark:text-stone-300">{exp.company}</span>
+                          <span class="mx-1.5 text-stone-300 dark:text-stone-600">/</span>
+                          {role.team}
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-2 text-xs text-stone-400 dark:text-stone-500 whitespace-nowrap font-mono tabular-nums mt-1 sm:mt-0">
+                        <span>{role.period}</span>
+                      </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 mt-1.5 text-xs text-stone-400 dark:text-stone-500">
+                      <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
+                      </svg>
+                      <span>{role.location}</span>
+                      <span class="text-stone-300 dark:text-stone-700">&middot;</span>
+                      <span>{role.type}</span>
+                    </div>
+
+                    <ul class="mt-4 space-y-2.5">
+                      {role.bullets.map((bullet) => (
+                        <li class="flex gap-2.5 text-sm text-stone-600 dark:text-stone-300 leading-relaxed">
+                          <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-stone-300 dark:text-stone-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                          </svg>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div class="mt-4 flex flex-wrap gap-1.5">
+                      {role.skills.map((skill) => (
+                        <span class:list={[
+                          'inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold border transition-all duration-300 hover:scale-105 cursor-default',
+                          getSkillClass(skill),
+                        ]}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
