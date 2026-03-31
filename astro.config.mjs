@@ -4,6 +4,6 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  site: 'https://www.jaspershan.com',
+  site: 'alexng42.github.io',
   integrations: [react(), tailwind()],
 });

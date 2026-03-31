@@ -11,7 +11,7 @@
           <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
           <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
         </div>
-        <span class="text-xs text-stone-400 font-mono ml-2">jasper@website ~ </span>
+        <span class="text-xs text-stone-400 font-mono ml-2">alex@website ~ </span>
       </div>
 
       <!-- Terminal body -->
@@ -53,7 +53,7 @@
   const allCommands = [
     'help', 'neofetch', 'whoami', 'history', 'ls', 'ls skills',
     'cat readme', 'cat readme.md', 'cowsay', 'clear', 'exit',
-    'sudo hire jasper', 'sudo rm -rf /', 'rm -rf /', 'ping',
+    'sudo hire alex', 'sudo rm -rf /', 'rm -rf /', 'ping',
     'pwd', 'date', 'vim', 'emacs', 'nano', 'cd', 'cd ..', 'cd ~', 'quit',
   ];
 
@@ -116,7 +116,7 @@
     'cat readme.md': () => commands['cat readme'](),
 
     cowsay: () => `<span class="text-stone-300"> _______________
-&lt; hire jasper!! &gt;
+&lt; hire alex!! &gt;
  ---------------
         \\   ^__^
          \\  (oo)\\_______
@@ -124,8 +124,8 @@
                 ||----w |
                 ||     ||</span>`,
 
-    'sudo hire jasper': () => `<span class="text-emerald-400">[sudo] password for recruiter: ********
-✓ Offer extended successfully. Jasper has been hired.</span>`,
+    'sudo hire alex': () => `<span class="text-emerald-400">[sudo] password for recruiter: ********
+✓ Offer extended successfully. Alex has been hired.</span>`,
 
     'sudo rm -rf /': () => `<span class="text-red-400">rm: nice try. this website is immutable.</span>`,
     'rm -rf /': () => `<span class="text-red-400">rm: permission denied. try sudo? (don't)</span>`,
@@ -138,12 +138,12 @@
     'cd ..': () => `<span class="text-stone-400">You can't leave. Not yet.</span>`,
     'cd ~': () => `<span class="text-stone-400">You're already home.</span>`,
 
-    pwd: () => `<span class="text-stone-300">/home/jasper/website</span>`,
+    pwd: () => `<span class="text-stone-300">/home/alex/website</span>`,
     date: () => `<span class="text-stone-300">${new Date().toString()}</span>`,
 
     echo: () => ``,
 
-    ping: () => `<span class="text-stone-300">PING jasper (127.0.0.1): 56 bytes
+    ping: () => `<span class="text-stone-300">PING alex (127.0.0.1): 56 bytes
 64 bytes: time=<span class="text-emerald-400">0.042ms</span> — I'm right here, just email me.</span>`,
 
     vim: () => `<span class="text-stone-400">I use vim btw. But not in the browser.</span>`,
